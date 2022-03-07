@@ -1,9 +1,9 @@
 <script>
   export let label = '';
   export let isToggled = false;
-  export let backgroundColor;
-  export let backgroundColorChecked;
-  export let buttonColor;
+  export let backgroundColor = undefined;
+  export let backgroundColorChecked = undefined;
+  export let buttonColor = undefined;
 
   let styleString = '';
   if (backgroundColor) styleString += `--toggleBackgroundColor: ${backgroundColor}; `;
@@ -15,7 +15,6 @@
     if (event instanceof KeyboardEvent && event.key !== 'Enter' && event.key !== ' ') {
       return;
     }
-    console.log(event);
     return (isToggled = !isToggled);
   }
 </script>

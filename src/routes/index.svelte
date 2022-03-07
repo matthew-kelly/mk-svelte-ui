@@ -1,20 +1,31 @@
 <script>
-  import Accordion from '$lib/Accordion.svelte';
-  import Toggle from '$lib/Toggle.svelte';
-  let isToggled = true;
+  import Field from '$lib/Field.svelte';
+
+  import SearchFilter from '$lib/SearchFilter.svelte';
+  // import Accordion from '$lib/Accordion.svelte';
+  // import Toggle from '$lib/Toggle.svelte';
+  // let isToggled = true;
+  let search = '';
+  let items = ['Matt', 'Rob', 'Jeff', 'Darcy', 'Kelly'];
 </script>
 
-<Toggle bind:isToggled />
+<Field bind:value={search} label="Search" instructions="Type to search" placeholder="Name" />
+<Field value={0} type="number" label="Number" />
 
+<p>This is the current search: {search}</p>
+
+<SearchFilter {items} bind:search />
+
+<!-- <Toggle bind:isToggled />
 <Toggle
   bind:isToggled
   buttonColor="blue"
   backgroundColor="orange"
   backgroundColorChecked="pink"
   label="Custom"
-/>
+/> -->
 
-<Accordion
+<!-- <Accordion
   buttonText="Do I need a credit card???"
   duration={300}
   animationEnd={() => console.log('animation ended')}
@@ -26,8 +37,4 @@
       voluptatem quasi enim nam quisquam!
     </p>
   </div>
-</Accordion>
-
-{#if isToggled}
-  <h1>I'm toggled</h1>
-{/if}
+</Accordion> -->

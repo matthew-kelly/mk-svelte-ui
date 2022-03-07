@@ -1,9 +1,9 @@
 <script>
   export let label = '';
   export let isToggled = false;
-  export let backgroundColor = undefined;
-  export let backgroundColorChecked = undefined;
-  export let buttonColor = undefined;
+  export let backgroundColor = '';
+  export let backgroundColorChecked = '';
+  export let buttonColor = '';
 
   let styleString = '';
   if (backgroundColor) styleString += `--toggleBackgroundColor: ${backgroundColor}; `;

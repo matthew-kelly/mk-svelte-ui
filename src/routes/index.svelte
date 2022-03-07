@@ -1,25 +1,28 @@
 <script>
-  import Field from '$lib/Field.svelte';
+  // import Field from '$lib/Field.svelte';
   import Markdown from '$lib/Markdown.svelte';
-
-  import SearchFilter from '$lib/SearchFilter.svelte';
+  import Portal from '$lib/Portal.svelte';
+  // import SearchFilter from '$lib/SearchFilter.svelte';
   // import Accordion from '$lib/Accordion.svelte';
   // import Toggle from '$lib/Toggle.svelte';
   // let isToggled = true;
-  let search = '';
+  // let search = '';
+  // let items = ['Matt', 'Rob', 'Jeff', 'Darcy', 'Kelly'];
   let text = '';
-  let items = ['Matt', 'Rob', 'Jeff', 'Darcy', 'Kelly'];
 </script>
 
-<Markdown bind:text />
+<Portal>
+  <Markdown bind:text />
+</Portal>
+
 <code>{text}</code>
 
-<Field bind:value={search} label="Search" instructions="Type to search" placeholder="Name" />
+<!-- <Field bind:value={search} label="Search" instructions="Type to search" placeholder="Name" />
 <Field value={0} type="number" label="Number" />
 
 <p>This is the current search: {search}</p>
 
-<SearchFilter {items} bind:search />
+<SearchFilter {items} bind:search /> -->
 
 <!-- <Toggle bind:isToggled />
 <Toggle

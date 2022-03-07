@@ -1,13 +1,18 @@
 <script>
   import Field from '$lib/Field.svelte';
+  import Markdown from '$lib/Markdown.svelte';
 
   import SearchFilter from '$lib/SearchFilter.svelte';
   // import Accordion from '$lib/Accordion.svelte';
   // import Toggle from '$lib/Toggle.svelte';
   // let isToggled = true;
   let search = '';
+  let text = '';
   let items = ['Matt', 'Rob', 'Jeff', 'Darcy', 'Kelly'];
 </script>
+
+<Markdown bind:text />
+<code>{text}</code>
 
 <Field bind:value={search} label="Search" instructions="Type to search" placeholder="Name" />
 <Field value={0} type="number" label="Number" />

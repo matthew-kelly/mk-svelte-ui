@@ -1,5 +1,5 @@
 <script>
-  import { slide } from '$lib/Slide';
+  import { slide } from '$lib/slide';
 
   export let buttonText = '';
   export let isOpen = false;

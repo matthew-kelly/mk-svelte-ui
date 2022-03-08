@@ -3,6 +3,8 @@
   import Markdown from '$lib/Markdown.svelte';
   import Modal from '$lib/Modal.svelte';
   import Portal from '$lib/Portal.svelte';
+  import Toast from '$lib/toast/Toast.svelte';
+  import { toast } from '$lib/toast/toast';
   // import SearchFilter from '$lib/SearchFilter.svelte';
   // import Accordion from '$lib/Accordion.svelte';
   // import Toggle from '$lib/Toggle.svelte';
@@ -20,6 +22,14 @@
 <code>{text}</code>
 
 <button on:click={() => (isModalOpen = true)}>Open modal</button>
+<br />
+<button on:click={() => toast.send('New message!')}>New toast</button>
+<button on:click={() => toast.send('New message!', { duration: 1000 })}>1000 Duration</button>
+<button on:click={() => toast.send('New message!', { duration: 5000, type: 'ERROR' })}
+  >Error Message</button
+>
+
+<Toast />
 
 <Modal bind:isModalOpen>
   <p>Hello from the modal!</p>

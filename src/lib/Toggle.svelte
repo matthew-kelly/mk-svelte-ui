@@ -20,6 +20,7 @@
 </script>
 
 <label style={styleString}>
+  {label}
   <input type="checkbox" bind:checked={isToggled} />
   <div
     class="toggle"
@@ -28,7 +29,6 @@
     aria-pressed={isToggled}
     on:keydown={handleKeyDown}
   />
-  {label}
 </label>
 
 <style>
@@ -47,7 +47,7 @@
     border-radius: var(--radius);
     border: solid 1px #777;
     transition: background-color 0.2s ease;
-    margin-right: 5px;
+    margin-left: 5px;
     background-color: var(--toggleBackgroundColor, #fff);
     outline-width: 2px;
   }

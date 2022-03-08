@@ -1,6 +1,7 @@
 <script>
   // import Field from '$lib/Field.svelte';
   import Markdown from '$lib/Markdown.svelte';
+  import Modal from '$lib/Modal.svelte';
   import Portal from '$lib/Portal.svelte';
   // import SearchFilter from '$lib/SearchFilter.svelte';
   // import Accordion from '$lib/Accordion.svelte';
@@ -8,7 +9,8 @@
   // let isToggled = true;
   // let search = '';
   // let items = ['Matt', 'Rob', 'Jeff', 'Darcy', 'Kelly'];
-  let text = '';
+  let text = 'hello!';
+  let isModalOpen = false;
 </script>
 
 <Portal>
@@ -17,12 +19,18 @@
 
 <code>{text}</code>
 
-<!-- <Field bind:value={search} label="Search" instructions="Type to search" placeholder="Name" />
-<Field value={0} type="number" label="Number" />
+<button on:click={() => (isModalOpen = true)}>Open modal</button>
 
-<p>This is the current search: {search}</p>
+<Modal bind:isModalOpen>
+  <p>Hello from the modal!</p>
+</Modal>
 
-<SearchFilter {items} bind:search /> -->
+<!-- <Field bind:value={search} label="Search" instructions="Type to search" placeholder="Name" /> -->
+<!-- <Field value={0} type="number" label="Number" /> -->
+
+<!-- <p>This is the current search: {search}</p> -->
+
+<!-- <SearchFilter {items} bind:search /> -->
 
 <!-- <Toggle bind:isToggled />
 <Toggle
